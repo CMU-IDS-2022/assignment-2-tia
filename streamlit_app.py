@@ -2,7 +2,7 @@ import streamlit as st
 import pandas as pd
 import altair as alt
 
-st.title("Let's analyze some Penguin Data 🐧📊.")
+st.title("Let's analyze some Penguin Data!!!! 🐧📊.")
 
 @st.cache  # add caching so we load the data only once
 def load_data():
