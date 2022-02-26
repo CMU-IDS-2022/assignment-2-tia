@@ -128,8 +128,11 @@ rank_bar = alt.Chart(
 st.altair_chart(rank_bar,use_container_width=True)
 
 
+
+
 ## Plot 2: Cumulative Wealth from Billionaires by Country and Year
 st.subheader("2. Cumulative wealth from billionaires by country")
+df_ag = geo_data()
 world = alt.topo_feature(data.world_110m.url, "countries")
 
 select = alt.binding_select(options=sorted(df_ag.year.unique()), name='Year:')
