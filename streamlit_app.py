@@ -129,6 +129,46 @@ st.altair_chart(rank_bar,use_container_width=True)
 ## Plot 2: Cumulative Wealth from Billionaires by Country and Year
 st.subheader("2. Cumulative wealth from billionaires by country")
 
+st.subheader("Map")
+df_ag = geo_data()
+st.write(df_ag)
+from vega_datasets import data
+
+world = alt.topo_feature(data.world_110m.url, "countries")
+
+select = alt.binding_select(options=sorted(df_ag.year.unique()), name='Year:')
+select_year = alt.selection_single(name="year", fields=['year'],
+                                bind=select, init={'year':'1996'})
+
+
+background = alt.Chart(world).mark_geoshape(
+    fill='lightgray',
+    stroke='white'
+).properties(
+    title='Countries over the World',
+    width=700,
+    height=400
+).project('naturalEarth1')
+
+
+
+foreground = alt.Chart(df_ag).mark_geoshape().encode(
+    color = alt.Color('Wealth Worth in Billions (log):Q'),#,legend=None),
+    tooltip = [alt.Tooltip("location_citizenship:N", title="Country"),
+               alt.Tooltip("wealth_worth_in_billions:Q", title="Wealth Worth in Billions")]
+).add_selection(select_year
+).transform_filter(select_year
+).transform_lookup(lookup='country-code',from_=alt.LookupData(world, key='id',fields=["type", "properties", "geometry"])
+).project('naturalEarth1'
+).properties(
+   width=700,
+    height=400,
+    title='Title'
+)
+
+final = background + foreground
+
+st.altair_chart(final, use_container_width=True)
 
 
 ## Plot 3: Gender Distribution by Different Categories
@@ -195,58 +235,5 @@ comb = scatter.add_selection(selection).encode(
 
 st.altair_chart(comb,use_container_width=True)
 
-
-
-
-
-
-
-
-
-
-### Plot 2 code 
-st.subheader("Map")
-df_ag = geo_data()
-st.write(df_ag)
-from vega_datasets import data
-
-world = alt.topo_feature(data.world_110m.url, "countries")
-
-select = alt.binding_select(options=sorted(df_ag.year.unique()), name='Year:')
-select_year = alt.selection_single(name="year", fields=['year'],
-                                bind=select, init={'year':'1996'})
-
-
-background = alt.Chart(world).mark_geoshape(
-    fill='lightgray',
-    stroke='white'
-).properties(
-    title='Countries over the World',
-    width=700,
-    height=400
-).project('naturalEarth1')
-
-
-
-foreground = alt.Chart(df_ag).mark_geoshape().encode(
-    color = alt.Color('Wealth Worth in Billions (log):Q'),#,legend=None),
-    tooltip = [alt.Tooltip("location_citizenship:N", title="Country"),
-               alt.Tooltip("wealth_worth_in_billions:Q", title="Wealth Worth in Billions")]
-).add_selection(select_year
-).transform_filter(select_year
-).transform_lookup(lookup='country-code',from_=alt.LookupData(world, key='id',fields=["type", "properties", "geometry"])
-).project('naturalEarth1'
-).properties(
-   width=700,
-    height=400,
-    title='Title'
-)
-
-final = background + foreground
-
-st.altair_chart(final, use_container_width=True)
-
-
-st.write(chart)
 
 st.markdown("This project was created by Student1 and Student2 for the [Interactive Data Science](https://dig.cmu.edu/ids2022) course at [Carnegie Mellon University](https://www.cmu.edu).")
