@@ -100,6 +100,7 @@ st.title("Let's analyze some Billionaires Data!! 📊.")
 
 ## Plot 1: TOP billionaires by Year
 st.text("1. Show yearly top 10 billionaires by year selected")
+df = load_data()
 year= st.selectbox("year", df['year'].unique())
 st.write(df[df['year']==year][['name','wealth_worth_in_billions','rank']].sort_values('wealth_worth_in_billions', ascending = False).head(10).set_index('rank'))
 
@@ -112,7 +113,6 @@ st.text("2. Cumulative wealth from billionaires by country")
 
 ## Plot 3: Gender Distribution by Different Categories
 st.text("3. Visualize gender distribution by selected category")
-df = load_data()
 df_14 = load_data14()
 if st.checkbox("Show Raw df"):
     st.write(df)
