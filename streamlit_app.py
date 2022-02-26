@@ -115,12 +115,12 @@ df_ranking = df[df['year']==year].sort_values('wealth_worth_in_billions', ascend
 rank_bar = alt.Chart(
     df_ranking,
 ).mark_bar(tooltip=True).encode(
-    x=alt.X('rank'),
+    x=alt.X('wealth_worth_in_billions'),
     y=alt.Y('name', sort='-x'),
     color=alt.Color('wealth_worth_in_billions')
 
 ).transform_window(
-    rank='rank(rank)',
+    rank='rank(wealth_worth_in_billions)',
     sort=[alt.SortField('rank', order='descending')]
 ).transform_filter(
     (alt.datum.rank < 11)
