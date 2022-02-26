@@ -121,7 +121,7 @@ rank_bar = alt.Chart(
 ).transform_filter(
     (alt.datum.rank < 10)
 )
-st.altair_chart(rank_bar,use_container_width=True)
+st.altair_chart(rank_bar)
 
 
 ## Plot 2: Cumulative Wealth from Billionaires by Country and Year
