@@ -102,19 +102,19 @@ if st.checkbox("Show Raw df"):
 
 
 ## Plot 1: TOP billionaires by Year
-st.text("1. Show yearly top 10 billionaires by year selected")
+st.header("1. Show yearly top 10 billionaires by year selected")
 year= st.selectbox("year", df['year'].unique())
 st.write(df[df['year']==year][['name','wealth_worth_in_billions','rank']].sort_values('wealth_worth_in_billions', ascending = False).head(10).set_index('rank'))
 
 
 
 ## Plot 2: Cumulative Wealth from Billionaires by Country and Year
-st.text("2. Cumulative wealth from billionaires by country")
+st.header("2. Cumulative wealth from billionaires by country")
 
 
 
 ## Plot 3: Gender Distribution by Different Categories
-st.text("3. Visualize gender distribution by selected category")
+st.header("3. Visualize gender distribution by selected category")
 df_14 = load_data14()
 
 st.text("Number of billionares by different categories, click certain category to see gender percentage")
@@ -148,7 +148,7 @@ st.altair_chart(chart & p)
 
 
 ## Plot 4: Linked Brushing: Age, Wealth, and Inheritance 
-st.text("4. Age, Wealth, and Inheritance")
+st.header("4. Age, Wealth, and Inheritance")
 df14 = load_data14()
 scatter = alt.Chart(df14).mark_point(
     tooltip=True
@@ -187,7 +187,7 @@ st.altair_chart(comb,use_container_width=True)
 
 
 ### Plot 2 code 
-st.title("Map")
+st.header("Map")
 df_ag = geo_data()
 st.write(df_ag)
 from vega_datasets import data
