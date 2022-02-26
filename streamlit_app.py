@@ -18,7 +18,8 @@ def load_data():
     Write 1-2 lines of code here to load the data from CSV to a pandas dataframe
     and return it.
     """
-    file = "https://raw.githubusercontent.com/CMU-IDS-2022/assignment-2-tia/master/billionaires.csv"
+    #file = "https://raw.githubusercontent.com/CMU-IDS-2022/assignment-2-tia/master/billionaires.csv"
+    file = "billionaires.csv"
     df = pd.read_csv(file)
     df.columns = df.columns.str.replace('.', '_')
     df.columns = df.columns.str.replace(' ', '_')
