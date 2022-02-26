@@ -10,7 +10,7 @@ import pandas as pd
 import altair as alt
 
 import numpy as np
-from vega_datasets import data
+#from vega_datasets import data
 
 st.title("Let's analyze some Billionaires Data!! 📊.")
 @st.cache
