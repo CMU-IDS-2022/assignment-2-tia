@@ -142,6 +142,40 @@ st.write(df[df['year']==year][['name','wealth_worth in billions']].sort_values('
 
 
 # MAIN CODE
+df14 = load_data14()
+scatter = alt.Chart(df14).mark_point(
+    tooltip=True
+).encode(
+    alt.X('demographics_age', scale=alt.Scale(zero=False)),
+    alt.Y("wealth_worth_in_billions", scale=alt.Scale(type='log'))   
+)
+
+
+
+hist = alt.Chart(df14).mark_bar(
+    tooltip=True
+).encode(
+    alt.Y(aggregate="count", type="quantitative"),
+    alt.X("wealth_worth_in_billions", bin=True)
+)
+
+
+
+selection = alt.selection_interval()
+
+comb = scatter.add_selection(selection).encode(
+    color=alt.condition(selection, "wealth_how_inherited", alt.value("grey"))
+) | hist.encode(
+    alt.Color("wealth_how_inherited", scale=alt.Scale(domain=['not inherited', 'spouse/widow','father', '3rd generation',
+       '4th generation','5th generation or longer']))
+).transform_filter(selection)
+
+st.write(comb)
+
+
+
+
+
 df = load_data()
 
 
