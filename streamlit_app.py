@@ -108,6 +108,9 @@ if st.checkbox("Show Raw Data"):
 
 ## Plot 1: TOP billionaires by Year
 st.subheader("1. Show TOP 10 billionaires by year selected")
+st.text('Instruction: \nSelect year from the dropdown menu to see corresponding TOP 10 billionaires in dataframe and barchart!') 
+
+
 year = st.selectbox("Year", df['year'].unique())
 #st.write(df[df['year']==year][['name','wealth_worth_in_billions','rank']].sort_values('wealth_worth_in_billions', ascending = False).head(10).set_index('rank'))
 new_df=df[df['year']==year][['name','wealth_worth_in_billions','rank']].sort_values('wealth_worth_in_billions', ascending = False).head(10).set_index('rank')
@@ -133,6 +136,8 @@ st.altair_chart(rank_bar,use_container_width=True)
 
 
 
+st.write(' ')
+st.write(' ')
 st.write(' ')
 
 ## Plot 2: Cumulative Wealth from Billionaires by Country and Year
