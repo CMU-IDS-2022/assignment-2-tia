@@ -108,7 +108,20 @@ if st.checkbox("Show Raw df"):
 st.subheader("1. Show yearly top 10 billionaires by year selected")
 year = st.selectbox("Year", df['year'].unique())
 st.write(df[df['year']==year][['name','wealth_worth_in_billions','rank']].sort_values('wealth_worth_in_billions', ascending = False).head(10).set_index('rank'))
+rank_bar = alt.Chart(
+    df_ranking,
+).mark_bar(tooltip=True).encode(
+    x=alt.X('rank'),
+    y=alt.Y('name', sort='-x'),
+    color=alt.Color('wealth_worth_in_billions')
 
+).transform_window(
+    rank='rank(rank)',
+    sort=[alt.SortField('rank', order='descending')]
+).transform_filter(
+    (alt.datum.rank < 10)
+)
+st.altair_chart(rank_bar)
 
 
 ## Plot 2: Cumulative Wealth from Billionaires by Country and Year
