@@ -96,11 +96,13 @@ def get_slice_membership(df, year, genders, industry, citizenship, age_range):
 
 # Main
 st.title("Let's analyze some Billionaires Data!! 📊.")
+df = load_data()
+if st.checkbox("Show Raw df"):
+    st.write(df)
 
 
 ## Plot 1: TOP billionaires by Year
 st.text("1. Show yearly top 10 billionaires by year selected")
-df = load_data()
 year= st.selectbox("year", df['year'].unique())
 st.write(df[df['year']==year][['name','wealth_worth_in_billions','rank']].sort_values('wealth_worth_in_billions', ascending = False).head(10).set_index('rank'))
 
@@ -114,8 +116,6 @@ st.text("2. Cumulative wealth from billionaires by country")
 ## Plot 3: Gender Distribution by Different Categories
 st.text("3. Visualize gender distribution by selected category")
 df_14 = load_data14()
-if st.checkbox("Show Raw df"):
-    st.write(df)
 
 st.text("Number of billionares by different categories, click certain category to see gender percentage")
 bar_list = ['wealth_type','company_type','location_region','wealth_how_industry']
