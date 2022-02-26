@@ -135,15 +135,17 @@ st.title("Billionare df Explorable")
 
 st.text("Visualize the overall dfset and some distributions")
 df = load_data()
-
+df_14 = load_data14()
 if st.checkbox("Show Raw df"):
     st.write(df)
 
 st.text("Number of billionares by different categories, click certain category to see gender percentage")
 bar_list = ['wealth_type','company_type','location_region','wealth_how_industry']
 feature = st.selectbox('Category', bar_list)
+
 click = alt.selection_multi(encodings=['color'])
 brush = alt.selection_multi(fields=[str(feature)])
+
 chart = alt.Chart(df_14).mark_bar(tooltip=True).encode(
     x = 'count()',
     y = str(feature),
