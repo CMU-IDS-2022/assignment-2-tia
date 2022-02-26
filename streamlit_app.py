@@ -218,8 +218,8 @@ scatter = alt.Chart(df14).mark_point(
 hist = alt.Chart(df14).mark_bar(
     tooltip=True
 ).encode(
-    alt.Y(aggregate="count", type="quantitative"),
-    alt.X("wealth_worth_in_billions", bin=True)
+    alt.X(aggregate="count", type="quantitative"),
+    alt.Y("wealth_worth_in_billions", bin=True)
 )
 
 
