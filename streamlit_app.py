@@ -208,7 +208,7 @@ st.altair_chart(chart & p)
 st.subheader("4. Age, Wealth, and Inheritance")
 df14 = load_data14()
 scatter = alt.Chart(df14).mark_point(
-    tooltip=True
+    tooltip=True,filled=True,opacity=0.5
 ).encode(
     alt.X('demographics_age', scale=alt.Scale(zero=False)),
     alt.Y("wealth_worth_in_billions", scale=alt.Scale(type='log'))   
