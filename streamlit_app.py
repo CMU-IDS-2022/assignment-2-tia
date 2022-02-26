@@ -75,7 +75,7 @@ def get_slice_membership(df, year, genders, industry, citizenship, age_range):
 st.title("Billionare df Explorable")
 
 st.text("Visualize the overall dfset and some distributions")
-df = load_df('billionaires.csv')
+df = load_data()
 
 if st.checkbox("Show Raw df"):
     st.write(df)
