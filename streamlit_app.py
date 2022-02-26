@@ -109,7 +109,7 @@ st.write(df[df['year']==year][['name','wealth_worth_in_billions','rank']].sort_v
 
 
 ## Plot 2: Cumulative Wealth from Billionaires by Country and Year
-st.header("2. Cumulative wealth from billionaires by country")
+st.subheader("2. Cumulative wealth from billionaires by country")
 
 
 
