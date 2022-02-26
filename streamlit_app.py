@@ -139,16 +139,27 @@ df = load_data()
 if st.checkbox("Show Raw df"):
     st.write(df)
 
+st.text("Number of billionares by different categories, click certain category to see gender percentage")
 bar_list = ['wealth_type','company_type','location_region','wealth_how_industry']
+feature = st.selectbox('Category', bar_list)
+click = alt.selection_multi(encodings=['color'])
+brush = alt.selection_multi(fields=[str(feature)])
+chart = alt.Chart(df_14).mark_bar(tooltip=True).encode(
+    x = 'count()',
+    y = str(feature),
+    color=alt.condition(click, str(feature), alt.value('lightgray'), legend = None)
+    ).add_selection(click)
 
-for i in bar_list:
-    brush = alt.selection_multi(fields=[i])
-    chart = alt.Chart(df).mark_bar().encode(
-        x = 'count()',
-        y = i,
-        color=alt.condition(brush,alt.value('salmon'), alt.value('lightgray'))
-    ).add_selection(brush)
-    st.altair_chart(chart)
+base = alt.Chart(df_14).encode(
+    theta=alt.Theta("count()", stack=True), color=alt.Color('demographics_gender')
+).transform_filter(
+    click)
+
+pie = base.mark_arc(outerRadius=120)
+text = base.mark_text(radius=140, size=20).encode(text='demographics_gender')
+
+p = pie + text
+st.altair_chart(chart & p)
 
 
 st.text("Show yearly top 10 billionaires and change")
