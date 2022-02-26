@@ -175,37 +175,10 @@ st.write(df[df['year']==year][['name','wealth_worth_in_billions','rank']].sort_v
 
 
 
-
-
-
-df = load_data()
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+st.title("Map")
 df_ag = geo_data()
-st.title("Billionaires")
-if st.checkbox("Show Raw Data"):
-    st.write(df)
-
-    
-
-
-st.write("### Visualize the overall dataset and some distributions here...")
-
-
-
+st.write(df_ag)
+from vega_datasets import data
 
 world = alt.topo_feature(data.world_110m.url, "countries")
 
