@@ -211,17 +211,21 @@ df14 = load_data14()
 scatter = alt.Chart(df14).mark_point(
     tooltip=True,filled=True,opacity=0.5
 ).encode(
-    alt.X('demographics_age', scale=alt.Scale(zero=False)),
-    alt.Y("wealth_worth_in_billions", scale=alt.Scale(type='log'))   
+    x=alt.X('demographics_age', scale=alt.Scale(zero=False),
+            axis=alt.Axis(title='Age')),
+    y=alt.Y('wealth_worth_in_billions', scale=alt.Scale(type='log'),
+            axis=alt.Axis(format='$', title='Wealth Worth in Billions (log)'))
 )
+
 
 
 hist = alt.Chart(df14).mark_bar(
     tooltip=True
 ).encode(
-    alt.X(aggregate="count", type="quantitative"),
-    alt.Y("wealth_worth_in_billions", bin=True)
+    x=alt.X(aggregate="count", type="quantitative",axis=alt.Axis(title='Count')),
+    y=alt.Y("wealth_worth_in_billions", bin=True,axis=alt.Axis(format='$', title='Wealth Worth in Billions (log)'))
 )
+
 
 
 selection = alt.selection_interval()
