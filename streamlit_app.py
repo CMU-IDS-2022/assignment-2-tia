@@ -100,7 +100,7 @@ def get_slice_membership(df, year, genders, industry, citizenship, age_range):
 
 
 # Main
-st.header("Let's analyze some Billionaires Data!! 📊.")
+st.Header("Let's analyze some Billionaires Data!! 📊.")
 df = load_data()
 if st.checkbox("Show Raw Data"):
     st.write(df)
@@ -188,7 +188,8 @@ chart = alt.Chart(df_14).mark_bar(tooltip=True).encode(
     ).add_selection(click)
 
 base = alt.Chart(df_14).encode(
-    theta=alt.Theta("count()", stack=True), color=alt.Color('demographics_gender')
+    theta=alt.Theta("count()", stack=True), color=alt.Color('demographics_gender'),
+    tooltip=['demographics_gender', 'count()']
 ).transform_filter(
     click)
 
