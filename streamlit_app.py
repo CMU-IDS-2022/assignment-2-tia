@@ -114,7 +114,7 @@ st.header("2. Cumulative wealth from billionaires by country")
 
 
 ## Plot 3: Gender Distribution by Different Categories
-st.header("3. Visualize gender distribution by selected category")
+st.subheader("3. Visualize gender distribution by selected category")
 df_14 = load_data14()
 
 st.text("Number of billionares by different categories, click certain category to see gender percentage")
@@ -148,7 +148,7 @@ st.altair_chart(chart & p)
 
 
 ## Plot 4: Linked Brushing: Age, Wealth, and Inheritance 
-st.header("4. Age, Wealth, and Inheritance")
+st.subheader("4. Age, Wealth, and Inheritance")
 df14 = load_data14()
 scatter = alt.Chart(df14).mark_point(
     tooltip=True
@@ -187,7 +187,7 @@ st.altair_chart(comb,use_container_width=True)
 
 
 ### Plot 2 code 
-st.header("Map")
+st.subheader("Map")
 df_ag = geo_data()
 st.write(df_ag)
 from vega_datasets import data
