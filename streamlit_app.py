@@ -25,6 +25,26 @@ def load_data():
     df.columns = df.columns.str.replace(' ', '_')
     return df
 
+def load_data14():
+    file = "https://raw.githubusercontent.com/CMU-IDS-2022/assignment-2-tia/master/billionaires.csv"
+    df = pd.read_csv(file)
+    df14 = df[df['year']==2014]
+    df14.dropna(inplace=True)
+    col = ['rank','wealth_type','location_citizenship','wealth_worth_in_billions','year','company_founded', 'company_type', 'demographics_age', 'demographics_gender', 
+           'location_region', 'wealth_how_from_emerging', 'wealth_how_industry', 'wealth_how_inherited',
+           'wealth_how_was_founder', 'wealth_how_was_political']
+    df14 = df14[col]
+    df14 = df14[(df14['demographics_age']!=0) & (df14['company_founded']!=0) & (df14.wealth_how_industry !='0')]
+    df14.loc[(df['company_type'] == " new") | (df['company_type'] == "new ") |(df['company_type'] == "new division"),
+             'company_type'] = 'new'
+    df14.loc[(df['company_type'] == " acquired") | (df['company_type'] == "aquired") |(df['company_type'] == "new/aquired"),
+             'company_type'] = 'acquired'
+    df14.loc[df['company_type'] == "new, privitization", 'company_type'] = 'privatization'
+    
+    return df14
+
+
+
 
 def geo_data():
     file = "https://raw.githubusercontent.com/CMU-IDS-2022/assignment-2-tia/master/billionaires.csv"
