@@ -49,6 +49,78 @@ def geo_data():
     return df_ag
 
 
+def load_df(url):
+    """
+    read df
+    """
+    df = pd.read_csv(url)
+    df.columns = df.columns.str.replace('.', '_')
+    return df 
+
+def get_slice_membership(df, year, genders, industry, citizenship, age_range):
+    """
+
+    """
+    labels = pd.Series([1] * len(df), index=df.index)
+    if genders:
+        labels &= df['demographics_gender'].isin(genders)
+    if year:
+        labels &= df['year']==year
+    if industry:
+        labels &= df['wealth_how_industry'].isin(industry)
+    if citizenship:
+        labels &= df['location_citizenship'].isin(citizenship)
+    if age_range is not None:
+        labels &= df['demographics_age'] >= age_range[0]
+        labels &= df['demographics_age'] <= age_range[1]
+    return labels
+#Main
+
+st.title("Billionare df Explorable")
+
+st.text("Visualize the overall dfset and some distributions")
+df = load_df('billionaires.csv')
+
+if st.checkbox("Show Raw df"):
+    st.write(df)
+
+bar_list = ['wealth_type','company_type','location_region','wealth_how_industry']
+
+for i in bar_list:
+    brush = alt.selection_multi(fields=[i])
+    chart = alt.Chart(df).mark_bar().encode(
+        x = 'count()',
+        y = i,
+        color=alt.condition(brush,alt.value('salmon'), alt.value('lightgray'))
+    ).add_selection(brush)
+    st.altair_chart(chart)
+
+
+st.text("Show yearly top 10 billionaires and change")
+
+#Define selection standards
+cols = st.columns(4)
+with cols[0]:
+    year= st.selectbox("year", df['year'].unique())
+with cols[1]:
+    genders = st.multiselect('Gender', df['demographics_gender'].unique())
+with cols[2]:
+    industry = st.multiselect('Industry', df['wealth_how_industry'].unique())
+with cols[3]:
+    citizenship = st.multiselect('Citizenship', df['location_citizenship'].unique())
+
+age_range = st.slider('demographics_age',
+                    min_value=int(df['demographics_age'].min()),
+                    max_value=int(df['demographics_age'].max()),
+                    value=(int(df['demographics_age'].min()), int(df['demographics_age'].max())))
+
+
+slice_labels = get_slice_membership(df, year, [genders], [industry], [citizenship], age_range)
+st.write(slice_labels)
+st.write(df[slice_labels])
+
+st.write(df[df['year']==year][['name','wealth_worth in billions']].sort_values('wealth_worth in billions', ascending = False).head(10))
+
 
 
 # MAIN CODE
