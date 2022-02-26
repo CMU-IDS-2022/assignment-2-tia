@@ -28,6 +28,8 @@ def load_data():
 def load_data14():
     file = "https://raw.githubusercontent.com/CMU-IDS-2022/assignment-2-tia/master/billionaires.csv"
     df = pd.read_csv(file)
+    df.columns = df.columns.str.replace('.', '_')
+    df.columns = df.columns.str.replace(' ', '_')
     df14 = df[df['year']==2014]
     df14.dropna(inplace=True)
     col = ['rank','wealth_type','location_citizenship','wealth_worth_in_billions','year','company_founded', 'company_type', 'demographics_age', 'demographics_gender', 
