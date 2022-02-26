@@ -1,6 +1,8 @@
 import streamlit as st
 import pandas as pd
 import altair as alt
+from vega_datasets import data
+
 
 
 
@@ -128,12 +130,6 @@ st.altair_chart(rank_bar,use_container_width=True)
 
 ## Plot 2: Cumulative Wealth from Billionaires by Country and Year
 st.subheader("2. Cumulative wealth from billionaires by country")
-
-st.subheader("Map")
-df_ag = geo_data()
-st.write(df_ag)
-from vega_datasets import data
-
 world = alt.topo_feature(data.world_110m.url, "countries")
 
 select = alt.binding_select(options=sorted(df_ag.year.unique()), name='Year:')
