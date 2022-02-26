@@ -164,30 +164,10 @@ p = pie + text
 st.altair_chart(chart & p)
 
 
-st.text("Show yearly top 10 billionaires and change")
+st.text("Show yearly top 10 billionaires by year selected")
 
-#Define selection standards
-cols = st.columns(4)
-with cols[0]:
-    year= st.selectbox("year", df['year'].unique())
-with cols[1]:
-    genders = st.multiselect('Gender', df['demographics_gender'].unique())
-with cols[2]:
-    industry = st.multiselect('Industry', df['wealth_how_industry'].unique())
-with cols[3]:
-    citizenship = st.multiselect('Citizenship', df['location_citizenship'].unique())
-
-age_range = st.slider('demographics_age',
-                    min_value=int(df['demographics_age'].min()),
-                    max_value=int(df['demographics_age'].max()),
-                    value=(int(df['demographics_age'].min()), int(df['demographics_age'].max())))
-
-
-slice_labels = get_slice_membership(df, year, [genders], [industry], [citizenship], age_range)
-st.write(slice_labels)
-st.write(df[slice_labels])
-
-st.write(df[df['year']==year][['name','wealth_worth in billions']].sort_values('wealth_worth in billions', ascending = False).head(10))
+year= st.selectbox("year", df['year'].unique())
+st.write(df[df['year']==year][['name','wealth_worth in billions','rank']].sort_values('wealth_worth in billions', ascending = False).head(10))
 
 
 
