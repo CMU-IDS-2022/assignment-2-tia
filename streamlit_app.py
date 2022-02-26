@@ -109,7 +109,7 @@ st.subheader("1. Show yearly top 10 billionaires by year selected")
 year = st.selectbox("Year", df['year'].unique())
 st.write(df[df['year']==year][['name','wealth_worth_in_billions','rank']].sort_values('wealth_worth_in_billions', ascending = False).head(10).set_index('rank'))
 df_ranking = df[df['year']==year].sort_values('wealth_worth_in_billions', ascending = False).head(10)
-st.write(df_ranking)
+
 rank_bar = alt.Chart(
     df_ranking,
 ).mark_bar(tooltip=True).encode(
@@ -121,7 +121,7 @@ rank_bar = alt.Chart(
     rank='rank(rank)',
     sort=[alt.SortField('rank', order='descending')]
 ).transform_filter(
-    (alt.datum.rank < 10)
+    (alt.datum.rank < 11)
 )
 st.altair_chart(rank_bar,use_container_width=True)
 
