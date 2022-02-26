@@ -107,7 +107,7 @@ if st.checkbox("Show Raw Data"):
 
 
 ## Plot 1: TOP billionaires by Year
-st.subheader("1. Show yearly top 10 billionaires by year selected")
+st.subheader("1. Show TOP 10 billionaires by year selected")
 year = st.selectbox("Year", df['year'].unique())
 #st.write(df[df['year']==year][['name','wealth_worth_in_billions','rank']].sort_values('wealth_worth_in_billions', ascending = False).head(10).set_index('rank'))
 new_df=df[df['year']==year][['name','wealth_worth_in_billions','rank']].sort_values('wealth_worth_in_billions', ascending = False).head(10).set_index('rank')
@@ -133,9 +133,10 @@ st.altair_chart(rank_bar,use_container_width=True)
 
 
 
+st.write(' ')
 
 ## Plot 2: Cumulative Wealth from Billionaires by Country and Year
-st.subheader("2. Cumulative wealth from billionaires by country")
+st.subheader("2. Cumulative wealth from billionaires across crountry by year")
 df_ag = geo_data()
 world = alt.topo_feature(data.world_110m.url, "countries")
 
