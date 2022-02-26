@@ -102,7 +102,7 @@ if st.checkbox("Show Raw df"):
 
 
 ## Plot 1: TOP billionaires by Year
-st.header("1. Show yearly top 10 billionaires by year selected")
+st.subheader("1. Show yearly top 10 billionaires by year selected")
 year= st.selectbox("year", df['year'].unique())
 st.write(df[df['year']==year][['name','wealth_worth_in_billions','rank']].sort_values('wealth_worth_in_billions', ascending = False).head(10).set_index('rank'))
 
