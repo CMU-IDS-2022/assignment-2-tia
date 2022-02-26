@@ -26,7 +26,8 @@ def load_data():
     return df
 
 def load_data14():
-    file = "https://raw.githubusercontent.com/CMU-IDS-2022/assignment-2-tia/master/billionaires.csv"
+    #file = "https://raw.githubusercontent.com/CMU-IDS-2022/assignment-2-tia/master/billionaires.csv"
+    file = "billionaires.csv"
     df = pd.read_csv(file)
     df.columns = df.columns.str.replace('.', '_')
     df.columns = df.columns.str.replace(' ', '_')
@@ -49,7 +50,8 @@ def load_data14():
 
 
 def geo_data():
-    file = "https://raw.githubusercontent.com/CMU-IDS-2022/assignment-2-tia/master/billionaires.csv"
+    #file = "https://raw.githubusercontent.com/CMU-IDS-2022/assignment-2-tia/master/billionaires.csv"
+    file = "billionaires.csv"
     df = pd.read_csv(file)
     df.columns = df.columns.str.replace('.', '_')
     df.columns = df.columns.str.replace(' ', '_')
