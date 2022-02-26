@@ -12,7 +12,6 @@ import altair as alt
 import numpy as np
 #from vega_datasets import data
 
-st.title("Let's analyze some Billionaires Data!! 📊.")
 @st.cache
 def load_data():
     """
@@ -92,48 +91,27 @@ def get_slice_membership(df, year, genders, industry, citizenship, age_range):
         labels &= df['demographics_age'] >= age_range[0]
         labels &= df['demographics_age'] <= age_range[1]
     return labels
-#Main
-df14 = load_data14()
-scatter = alt.Chart(df14).mark_point(
-    tooltip=True
-).encode(
-    alt.X('demographics_age', scale=alt.Scale(zero=False)),
-    alt.Y("wealth_worth_in_billions", scale=alt.Scale(type='log'))   
-)
 
 
 
-hist = alt.Chart(df14).mark_bar(
-    tooltip=True
-).encode(
-    alt.Y(aggregate="count", type="quantitative"),
-    alt.X("wealth_worth_in_billions", bin=True)
-)
+# Main
+st.title("Let's analyze some Billionaires Data!! 📊.")
+
+
+## Plot 1: TOP billionaires by Year
+st.text("1. Show yearly top 10 billionaires by year selected")
+year= st.selectbox("year", df['year'].unique())
+st.write(df[df['year']==year][['name','wealth_worth_in_billions','rank']].sort_values('wealth_worth_in_billions', ascending = False).head(10).set_index('rank'))
 
 
 
-selection = alt.selection_interval()
-
-comb = scatter.add_selection(selection).encode(
-    color=alt.condition(selection, "wealth_how_inherited", alt.value("grey"))
-) | hist.encode(
-    alt.Color("wealth_how_inherited", scale=alt.Scale(domain=['not inherited', 'spouse/widow','father', '3rd generation',
-       '4th generation','5th generation or longer']))
-).transform_filter(selection)
-
-st.altair_chart(comb,use_container_width=True)
+## Plot 2: Cumulative Wealth from Billionaires by Country and Year
+st.text("2. Cumulative wealth from billionaires by country")
 
 
 
-
-
-
-
-
-
-st.title("Billionare df Explorable")
-
-st.text("Visualize the overall dfset and some distributions")
+## Plot 3: Gender Distribution by Different Categories
+st.text("3. Visualize gender distribution by selected category")
 df = load_data()
 df_14 = load_data14()
 if st.checkbox("Show Raw df"):
@@ -164,17 +142,51 @@ p = pie + text
 st.altair_chart(chart & p)
 
 
-st.text("Show yearly top 10 billionaires by year selected")
-
-year= st.selectbox("year", df['year'].unique())
-st.write(df[df['year']==year][['name','wealth_worth_in_billions','rank']].sort_values('wealth_worth_in_billions', ascending = False).head(10).set_index('rank'))
 
 
 
-# MAIN CODE
+
+
+## Plot 4: Linked Brushing: Age, Wealth, and Inheritance 
+st.text("4. Age, Wealth, and Inheritance")
+df14 = load_data14()
+scatter = alt.Chart(df14).mark_point(
+    tooltip=True
+).encode(
+    alt.X('demographics_age', scale=alt.Scale(zero=False)),
+    alt.Y("wealth_worth_in_billions", scale=alt.Scale(type='log'))   
+)
+
+
+hist = alt.Chart(df14).mark_bar(
+    tooltip=True
+).encode(
+    alt.Y(aggregate="count", type="quantitative"),
+    alt.X("wealth_worth_in_billions", bin=True)
+)
+
+
+selection = alt.selection_interval()
+
+comb = scatter.add_selection(selection).encode(
+    color=alt.condition(selection, "wealth_how_inherited", alt.value("grey"))
+) | hist.encode(
+    alt.Color("wealth_how_inherited", scale=alt.Scale(domain=['not inherited', 'spouse/widow','father', '3rd generation',
+       '4th generation','5th generation or longer']))
+).transform_filter(selection)
+
+st.altair_chart(comb,use_container_width=True)
 
 
 
+
+
+
+
+
+
+
+### Plot 2 code 
 st.title("Map")
 df_ag = geo_data()
 st.write(df_ag)
