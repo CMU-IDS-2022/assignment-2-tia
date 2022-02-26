@@ -107,7 +107,7 @@ if st.checkbox("Show Raw Data"):
 
 
 ## Plot 1: TOP billionaires by Year
-st.subheader("1. Show TOP 10 billionaires by year selected")
+st.subheader("1. Show TOP 10 billionaires by Year Selected")
 st.text('Instruction: \nSelect year from the dropdown menu to see corresponding TOP 10 billionaires in dataframe and barchart!') 
 
 
@@ -141,7 +141,10 @@ st.write(' ')
 st.write(' ')
 
 ## Plot 2: Cumulative Wealth from Billionaires by Country and Year
-st.subheader("2. Cumulative wealth from billionaires across crountry by year")
+st.subheader("2. Cumulative Wealth from Billionaires across Country by Year")
+st.text('Instruction: \nSelect year from the dropdown menu below to') 
+
+
 df_ag = geo_data()
 world = alt.topo_feature(data.world_110m.url, "countries")
 
