@@ -121,7 +121,7 @@ comb = scatter.add_selection(selection).encode(
        '4th generation','5th generation or longer']))
 ).transform_filter(selection)
 
-st.altair_chart(comb,use container width=true)
+st.altair_chart(comb,use_container_width=true)
 
 
 
