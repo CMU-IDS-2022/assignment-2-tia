@@ -21,7 +21,10 @@ def load_data():
     """
     file = "https://raw.githubusercontent.com/CMU-IDS-2022/assignment-2-tia/master/billionaires.csv"
     df = pd.read_csv(file)
+    df.columns = df.columns.str.replace('.', '_')
+    df.columns = df.columns.str.replace(' ', '_')
     return df
+
 
 def geo_data():
     file = "https://raw.githubusercontent.com/CMU-IDS-2022/assignment-2-tia/master/billionaires.csv"
@@ -49,13 +52,6 @@ def geo_data():
     return df_ag
 
 
-def load_df(url):
-    """
-    read df
-    """
-    df = pd.read_csv(url)
-    df.columns = df.columns.str.replace('.', '_')
-    return df 
 
 def get_slice_membership(df, year, genders, industry, citizenship, age_range):
     """
