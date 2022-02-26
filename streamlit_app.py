@@ -102,7 +102,7 @@ def get_slice_membership(df, year, genders, industry, citizenship, age_range):
 # Main
 st.title("Let's analyze some Billionaires Data!! 📊.")
 df = load_data()
-if st.checkbox("Show Raw df"):
+if st.checkbox("Show Raw Data"):
     st.write(df)
 
 
@@ -154,7 +154,7 @@ background = alt.Chart(world).mark_geoshape(
 foreground = alt.Chart(df_ag).mark_geoshape().encode(
     color = alt.Color('Wealth Worth in Billions (log):Q'),#,legend=None),
     tooltip = [alt.Tooltip("location_citizenship:N", title="Country"),
-               alt.Tooltip("wealth_worth_in_billions:Q", title="Wealth Worth in Billions")]
+               alt.Tooltip("wealth_worth_in_billions:Q", title="Cumulative Wealth Worth in Billions")]
 ).add_selection(select_year
 ).transform_filter(select_year
 ).transform_lookup(lookup='country-code',from_=alt.LookupData(world, key='id',fields=["type", "properties", "geometry"])
