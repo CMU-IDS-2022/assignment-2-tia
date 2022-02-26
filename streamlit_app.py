@@ -108,7 +108,7 @@ if st.checkbox("Show Raw df"):
 st.subheader("1. Show yearly top 10 billionaires by year selected")
 year = st.selectbox("Year", df['year'].unique())
 st.write(df[df['year']==year][['name','wealth_worth_in_billions','rank']].sort_values('wealth_worth_in_billions', ascending = False).head(10).set_index('rank'))
-df_ranking = df[df['year']==year].sort_values('wealth_worth_in_billions', ascending = False).head(10)
+df_ranking = df[df['year']==year].sort_values('wealth_worth_in_billions', ascending = False)
 rank_bar = alt.Chart(
     df_ranking,
 ).mark_bar(tooltip=True).encode(
