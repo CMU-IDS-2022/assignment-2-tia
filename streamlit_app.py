@@ -163,7 +163,7 @@ background = alt.Chart(world).mark_geoshape(
     fill='lightgray',
     stroke='white'
 ).properties(
-    title='Countries over the World',
+    title='Cumulative Wealth over the World',
     width=700,
     height=400
 ).project('naturalEarth1')
