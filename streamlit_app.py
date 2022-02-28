@@ -100,12 +100,16 @@ def get_slice_membership(df, year, genders, industry, citizenship, age_range):
 
 
 # Main
-st.header("Let's analyze some Forbes Billionaires Data💰💰.")
+st.header("Let's analyze some Billionaires Data💰💰.")
 st.text("Researchers have compiled a multi-decade database of the super-rich.\n👉Building off the Forbes World’s Billionaires lists from 1996-2014, scholars at Peterson\nInstitute for International Economics have added a couple dozen more variables about\neach billionaire - including whether they were self-made or inherited their wealth.") 
 
 df = load_data()
 if st.checkbox("Show Raw Data"):
     st.write(df)
+
+st.write(' ')
+st.write(' ')
+st.write(' ')
 
 
 ## Plot 1: TOP billionaires by Year
@@ -184,6 +188,9 @@ final = background + foreground
 
 st.altair_chart(final, use_container_width=True)
 
+st.write(' ')
+st.write(' ')
+st.write(' ')
 
 ## Plot 3: Gender Distribution by Different Categories
 st.subheader("3. Visualize gender distribution by selected category")
@@ -216,7 +223,9 @@ st.altair_chart(chart & p)
 
 
 
-
+st.write(' ')
+st.write(' ')
+st.write(' ')
 
 
 
