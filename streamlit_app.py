@@ -100,7 +100,7 @@ def get_slice_membership(df, year, genders, industry, citizenship, age_range):
 
 
 # Main
-st.header("Let's analyze some Billionaires Data💰💰.")
+st.header("Let's analyze some Billionaires Data💰💰")
 st.text("Researchers have compiled a multi-decade database of the super-rich.\n👉Building off the Forbes World’s Billionaires lists from 1996-2014, scholars at Peterson\nInstitute for International Economics have added a couple dozen more variables about\neach billionaire - including whether they were self-made or inherited their wealth.") 
 
 df = load_data()
@@ -112,7 +112,7 @@ st.write(' ')
 st.write(' ')
 
 
-## Plot 1: TOP billionaires by Year
+## Plot 1: TOP Billionaires by Year
 st.subheader("1. Show TOP 10 billionaires by Year Selected")
 st.text('Instruction: \nSelect year from the dropdown menu to see corresponding TOP 10 billionaires in dataframe and barchart!') 
 
@@ -148,7 +148,7 @@ st.write(' ')
 
 ## Plot 2: Cumulative Wealth from Billionaires by Country and Year
 st.subheader("2. Cumulative Wealth from Billionaires across Country by Year")
-st.text('Instruction: \nSelect year from the dropdown menu below to') 
+st.text('Change year to see overall wealth distribution from Forbes bliionaires over the world!') 
 
 
 df_ag = geo_data()
@@ -173,7 +173,7 @@ background = alt.Chart(world).mark_geoshape(
 foreground = alt.Chart(df_ag).mark_geoshape().encode(
     color = alt.Color('Wealth Worth in Billions (log):Q'),#,legend=None),
     tooltip = [alt.Tooltip("location_citizenship:N", title="Country"),
-               alt.Tooltip("wealth_worth_in_billions:Q", title="Cumulative Wealth Worth in Billions")]
+               alt.Tooltip("wealth_worth_in_billions:Q", title="Cumulative Wealth Worth in Billions ($)")]
 ).add_selection(select_year
 ).transform_filter(select_year
 ).transform_lookup(lookup='country-code',from_=alt.LookupData(world, key='id',fields=["type", "properties", "geometry"])
@@ -193,7 +193,7 @@ st.write(' ')
 st.write(' ')
 
 ## Plot 3: Gender Distribution by Different Categories
-st.subheader("3. Visualize gender distribution by selected category")
+st.subheader("3. Visualize Gender Distribution by Selected Category")
 df_14 = load_data14()
 
 st.text("Number of billionares by different categories, click certain category to see gender percentage")
@@ -231,6 +231,7 @@ st.write(' ')
 
 ## Plot 4: Linked Brushing: Age, Wealth, and Inheritance 
 st.subheader("4. Age, Wealth, and Inheritance")
+st.text('Check out the inheritance types by age or by wealth level!)
 df14 = load_data14()
 scatter = alt.Chart(df14).mark_point(
     tooltip=True,filled=True,opacity=0.5
@@ -238,7 +239,7 @@ scatter = alt.Chart(df14).mark_point(
     x=alt.X('demographics_age', scale=alt.Scale(zero=False),
             axis=alt.Axis(title='Age')),
     y=alt.Y('wealth_worth_in_billions', scale=alt.Scale(type='log'),
-            axis=alt.Axis(format='$', title='Wealth Worth in Billions (log)'))
+            axis=alt.Axis(format='$', title='Wealth Worth in Billions $ (log)'))
 )
 
 
@@ -247,7 +248,7 @@ hist = alt.Chart(df14).mark_bar(
     tooltip=True
 ).encode(
     x=alt.X(aggregate="count", type="quantitative",axis=alt.Axis(title='Count')),
-    y=alt.Y("wealth_worth_in_billions", bin=True,axis=alt.Axis(format='$', title='Wealth Worth in Billions (log)'))
+    y=alt.Y("wealth_worth_in_billions", bin=True,axis=alt.Axis(format='$', title='Wealth Worth in Billions $ (log)'))
 )
 
 
