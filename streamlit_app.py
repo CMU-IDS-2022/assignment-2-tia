@@ -231,7 +231,7 @@ st.write(' ')
 
 ## Plot 4: Linked Brushing: Age, Wealth, and Inheritance 
 st.subheader("4. Age, Wealth, and Inheritance")
-st.text('Check out the inheritance types by age or by wealth level!)
+st.text('Check out the inheritance types by age or by wealth level!')
 df14 = load_data14()
 scatter = alt.Chart(df14).mark_point(
     tooltip=True,filled=True,opacity=0.5
