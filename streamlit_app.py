@@ -253,4 +253,4 @@ comb = scatter.add_selection(selection).encode(
 st.altair_chart(comb,use_container_width=True)
 
 
-st.markdown("This project was created by Student1 and Student2 for the [Interactive Data Science](https://dig.cmu.edu/ids2022) course at [Carnegie Mellon University](https://www.cmu.edu).")
+st.markdown("This project was created by Silvia Gu and Tina Feng for the [Interactive Data Science](https://dig.cmu.edu/ids2022) course at [Carnegie Mellon University](https://www.cmu.edu).")
