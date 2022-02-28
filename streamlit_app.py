@@ -224,7 +224,7 @@ df14 = load_data14()
 scatter = alt.Chart(df14).mark_point(
     tooltip=True,filled=True,opacity=0.5
 ).encode(
-    x=alt.X('demographics_age', scale=alt.Scale(zero=False),
+    x=alt.X('location_region', scale=alt.Scale(zero=False),
             axis=alt.Axis(title='Age')),
     y=alt.Y('wealth_worth_in_billions', scale=alt.Scale(type='log'),
             axis=alt.Axis(format='$', title='Wealth Worth in Billions (log)'))
