@@ -100,7 +100,7 @@ def get_slice_membership(df, year, genders, industry, citizenship, age_range):
 
 
 # Main
-st.header("Let's analyze some Billionaires Data!! 📊.")
+st.header("Let's analyze some Billionaires Data💰💰.")
 df = load_data()
 if st.checkbox("Show Raw Data"):
     st.write(df)
@@ -244,7 +244,7 @@ hist = alt.Chart(df14).mark_bar(
 selection = alt.selection_interval()
 
 comb = scatter.add_selection(selection).encode(
-    color=alt.condition(selection, "wealth_how_inherited", alt.value("grey"))
+    color=alt.condition(selection, "location_region", alt.value("grey"))
 ) | hist.encode(
     alt.Color("wealth_how_inherited", scale=alt.Scale(domain=['not inherited', 'spouse/widow','father', '3rd generation',
        '4th generation','5th generation or longer']))
