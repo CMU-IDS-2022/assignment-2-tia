@@ -198,6 +198,11 @@ df_14 = load_data14()
 
 st.text("Number of billionares by different categories, click certain category to see gender percentage")
 bar_list = ['wealth_type','company_type','location_region','wealth_how_industry']
+st.text("'wealth_type' represents how they obtain their wealth, through inheritage, marriage or earning by themselves.")
+st.text("'company_type' represents the type of business for their companies, like private or state owned.")
+st.text("'location_region' represents the region of the world where this billionaire lives.")
+st.text("'wealth_how_industry' represents the specific industry this billionaire profitted from.")
+
 feature = st.selectbox('Category', bar_list)
 
 click = alt.selection_multi(encodings=['color'])
