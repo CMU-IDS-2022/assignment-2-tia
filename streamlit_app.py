@@ -234,7 +234,8 @@ st.subheader("4. Age, Wealth, and Inheritance")
 st.text('Check out the inheritance types by age or by wealth level!')
 df14 = load_data14()
 scatter = alt.Chart(df14).mark_point(
-    tooltip=True,filled=True,opacity=0.5
+    tooltip= [alt.Tooltip("location_citizenship:N", title="Country"),
+               alt.Tooltip("wealth_worth_in_billions:Q", title="Wealth Worth in Billions ($)")],filled=True,opacity=0.5
 ).encode(
     x=alt.X('demographics_age', scale=alt.Scale(zero=False),
             axis=alt.Axis(title='Age')),
