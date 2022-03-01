@@ -34,7 +34,7 @@ TODO: **A rationale for your design decisions.** How did you choose your particu
   - Filter by year: selection box  
   - Present TOP 10 billionaire's information by rank: sorted dataframe (table)
   - Visualize TOP 10 billiaonires' wealth: sorted bar chart with color scales
-  - * We enable users to focus on top 10 billionaires across years by this design. Table is straightforward to show the rank. We only take 3 columns from the full dataframe to emphasize crucial information: Name of billionaire, their total weath and rank in the list; Using sorted colorful bar chart, we show the wealth of billionaires by their rank and it's helpful to see the wealth gap between top 10 billionaires.
+  - *We enable users to focus on top 10 billionaires across years by this design. Table is straightforward to show the rank. We only take 3 columns from the full dataframe to emphasize crucial information: Name of billionaire, their total weath and rank in the list; Using sorted colorful bar chart, we show the wealth of billionaires by their rank and it's helpful to see the wealth gap between top 10 billionaires.*
  
 **2. How has billionaire's wealth contributed to different economies and how has the wealth distribution changed throughout years?**
   - Filter by year: selection box (dropdown menu)
@@ -48,7 +48,7 @@ TODO: **A rationale for your design decisions.** How did you choose your particu
   - Show distribution by criteria: bar chart
   - Link between criteria and sub-group gender distribution: select bar
   - Show gender distribution in selected bar group: pie chart
-  - *Bar chart and pie chart are good tools to show distribution, proportion and allow cross-group comparison. Selection box allow users to slice data by different categories and explore distribution. Link between these two charts enable users to dig dipper when they care about detailed information within certain sub-groups.
+  - *Bar chart and pie chart are good tools to show distribution, proportion and allow cross-group comparison. Selection box allow users to slice data by different categories and explore distribution. Link between these two charts enable users to dig dipper when they care about detailed information within certain sub-groups.*
 
 **4. How is billionaires' age associated with their wealth in 2014?**
   - Explore relationship between billiaonaire's age and wealth: scatter plot
