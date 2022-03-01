@@ -76,28 +76,29 @@ TODO: **A rationale for your design decisions.** How did you choose your particu
 
 TODO:  **A success story of your project.** Describe an insight or discovery you gain with your application that relates to the goals of your project.
 
+
+
+
 **1. Who are the TOP 10 billionaires and what's their wealth in 1996, 2001, and 2014?**
-    - TOP 10 billionaires haven't changed a lot in 1996, 2001, and 2014, perhaps because it took time to accumulate wealth.
-    - Bill Gates stayed at the TOP 1 position for all three years with his wealth increased by around four times from 1996 to 2014.
+- TOP 10 billionaires haven't changed a lot in 1996, 2001, and 2014, perhaps because it took time to accumulate wealth.
+- Bill Gates stayed at the TOP 1 position for all three years with his wealth increased by around four times from 1996 to 2014.
 
 
 
 **2. How has billionaire's wealth contributed to different economies and how has the wealth distribution changed throughout years.**
-    - The majority of cumulative wealth from billionaires aggregates in North America across 1996, 2001, and 2014
-    - Cumulative wealth from billiionaires increased significantly in Asia from 1996 to 2014, especially in Russia and China
-    - Previously, the wealth aggregated more in western countries, specifically the United States. As time goes on, the economies in Asia grew a lot, making the wealth distribution across country more scattered.
+- The majority of cumulative wealth from billionaires aggregates in North America across 1996, 2001, and 2014
+- Cumulative wealth from billiionaires increased significantly in Asia from 1996 to 2014, especially in Russia and China
+- Previously, the wealth aggregated more in western countries, specifically the United States. As time goes on, the economies in Asia grew a lot, making the wealth distribution across country more scattered.
 
 **3. What's the distribution of billionaires in 2014 by different criteria?**
-    - The majority of
+- The majority of
     
 **4. How is billionaires' age associated with their wealth in 2014**
-    - The majority of Forbes billionaires aged between 40 to 80, indicating that the richest people in the world usually achieve the peak of their wealth at their middle age
-    - The majority of billionaires are on the bottom half of the wealth worth scale (log), meaning that it may be relative easier to achieve a lower-to-middle wealth level (although still rich) compared to the "super-wealthy" level: only a few are able to make it to the top.
+- The majority of Forbes billionaires aged between 40 to 80, indicating that the richest people in the world usually achieve the peak of their wealth at their middle age
+- The majority of billionaires are on the bottom half of the wealth worth scale (log), meaning that it may be relative easier to achieve a lower-to-middle wealth level (although still rich) compared to the "super-wealthy" level: only a few are able to make it to the top.
     
 **5. Given data of year 2014, were the wealth of billionaires inherited or earned? How does that look like by age and wealth?**
-    -Most billionaires' wealth are not inherited, especially for those who wealth worth is at the lower level on the scale. Wealth inherited from father or third generation becomes more prevelant in upper level of wealth worth. This may imply that by one's own effort, the person is able to accumulate certain amount of wealth, but in order to become one of the TOP richest people, family heritage sometimes may play an important role (although for some of the richest people, their wealth was not inherited—this may have something to do with other factors such as company industry, etc).
-    - Distribution of inheritance type, in general, is consistent across all age groups: not inherited > father > 3rd generation > 4th generation > 5th generation > spouse/widow.
+-Most billionaires' wealth are not inherited, especially for those who wealth worth is at the lower level on the scale. Wealth inherited from father or third generation becomes more prevelant in upper level of wealth worth. This may imply that by one's own effort, the person is able to accumulate certain amount of wealth, but in order to become one of the TOP richest people, family heritage sometimes may play an important role (although for some of the richest people, their wealth was not inherited—this may have something to do with other factors such as company industry, etc).
+- Distribution of inheritance type, in general, is consistent across all age groups: not inherited > father > 3rd generation > 4th generation > 5th generation > spouse/widow.
 
-**Which aspect took the most time?**
-- Silvia: think and implement interactions between graphs
-- Tina: explore how to use map with Altair and deploy it to Streamlit
+
