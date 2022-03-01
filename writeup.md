@@ -53,7 +53,7 @@ TODO: **A rationale for your design decisions.** How did you choose your particu
 **5. Given data of year 2014, were the wealth of billionaires inherited or earned? How does that look like by age and wealth?**
   - Show different wealth accural means: color the points in scatter plot
   - Show distribution of wealth accural means by age and wealth worth: selection interval linked to stacked bar chart
-  - *We would like to build some interactions between two different plots. Here we choose selection interval as the customized size of selected region allows users to explore inheritance types by age(with the selected region as a vertical rectangle with height covering the wealth worth range), by wealth level (with the selected region as a horizontal rectangle with length covering the age range), or by any combinations of age and wealth level customized by users. The stackbaris a direct way to show the count and proportion of different inheritance types. Pie chart can also achieve that goal, but it seems not fit here as we want to keep the wealth worth axis consistent with the linked scatter plot.
+  - *We would like to build some interactions between two different plots. Here we choose selection interval as the customized size of selected region allows users to explore inheritance types by age(with the selected region as a vertical rectangle with height covering the wealth worth range), by wealth level (with the selected region as a horizontal rectangle with length covering the age range), or by any combinations of age and wealth level customized by users. The stackbaris a direct way to show the count and proportion of different inheritance types. Pie chart can also achieve that goal, but it seems not fit here as we want to keep the wealth worth axis consistent with the linked scatter plot.*
 
 
 
@@ -85,7 +85,9 @@ TODO:  **A success story of your project.** Describe an insight or discovery you
     - Previously, the wealth aggregated more in western countries, specifically the United States. As time goes on, the economies in Asia grew a lot, making the wealth distribution across country more scattered.
 
 **3. What's the distribution of billionaires in 2014 by different criteria?**
-    - Majority of 
-4. How is billaionaires' age associated with their wealth
-5. Were the wealth of billionaires inherited or earned? How does that look like by age and wealth?
+    - The majority of 
+**4. How is billionaires' age associated with their wealth in 2014**
+    - The majority of Forbes billionaires aged between 40 to 80, indicating that the richest people in the world usually achieve the peak of their wealth at their middle age
+    - The majority of billionaires are on the bottom half of the wealth worth scale (log), meaning that it may be relative easier to achieve a lower-to-middle wealth level (although still rich) compared to the "super-wealthy" level: only a few are able to make it to the top.
+**5. Given data of year 2014, were the wealth of billionaires inherited or earned? How does that look like by age and wealth?**
 
