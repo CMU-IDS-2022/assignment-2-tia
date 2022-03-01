@@ -28,8 +28,6 @@ We achieved these goals through different types of visualization including inter
 
 ## Design
 
-TODO: **A rationale for your design decisions.** How did you choose your particular visual encodings and interaction techniques? What alternatives did you consider and how did you arrive at your ultimate choices?
-
 **1. Who are the TOP 10 billionaires and what's their wealth in 1996, 2001, and 2014?**
   - Filter by year: selection box  
   - Present TOP 10 billionaire's information by rank: sorted dataframe (table)
