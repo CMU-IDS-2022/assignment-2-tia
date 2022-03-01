@@ -19,7 +19,7 @@ We achieved these goals through different types of visualization including inter
     - Type of the billionaire's wealth
     - Type of the billionaire's business
     - Region of the world the billioanire resides
-    - Tndustry the billionaire profitted from
+    - Industry the billionaire profitted from
 4. How is billaionaires' age associated with their wealth in 2014?
 5. Given data of year 2014, were the wealth of billionaires inherited or earned? How does that look like by age and wealth?
 
