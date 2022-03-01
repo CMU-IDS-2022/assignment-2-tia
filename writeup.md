@@ -33,10 +33,10 @@ TODO: **A rationale for your design decisions.** How did you choose your particu
 
  
 **2. How has billionaire's wealth contributed to different economies and how has the wealth distribution changed throughout years?**
-  - Filter by year: selection box
+  - Filter by year: selection box (dropdown menu)
   - Visualize geographical location: world map
   - Show cumulative wealth from billionaires by country: different color shades to represent change in wealth worth 
-  - *The rationale of using the world map is straightforward as I'd like to present geological information. Here I matched the country information from my dataset with country-code to color the entire country regions. I chose not to use longitute and latitude because by doing so, I could only use circles to represent the country with varying size indicating the difference in wealth worth. This is not aesthetically pleasant——using different color shades is more efficient.  
+  - *The rationale of using the world map is straightforward as we'd like to present geological information. Here I matched the country information from my dataset with country-code to color the entire country regions. we chose not to use longitute and latitude because by doing so, we could only use circles to represent the country with varying size indicating the difference in wealth worth. This is not aesthetically pleasant——using different color shades is more efficient. By selecting different years using the dropdown menu, users are able to detect a direct change in wealth distribution (If our year variable is more "continuous", we'd have used slider rather than dropdown menu and added some color transition effects if possible)*  
 
 
 **3.What's the distribution of billionaires in 2014 by different criteria?**
@@ -47,11 +47,13 @@ TODO: **A rationale for your design decisions.** How did you choose your particu
 
 **4. How is billionaires' age associated with their wealth in 2014?**
   - Explore relationship between billiaonaire's age and wealth: scatter plot
+  - *Scatter plot is a great if we want to catch any trend/relationship between two continuous variables.*
 
 
 **5. Given data of year 2014, were the wealth of billionaires inherited or earned? How does that look like by age and wealth?**
   - Show different wealth accural means: color the points in scatter plot
   - Show distribution of wealth accural means by age and wealth worth: selection interval linked to stacked bar chart
+  - * 
 
 
 
