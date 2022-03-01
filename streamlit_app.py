@@ -100,9 +100,11 @@ def get_slice_membership(df, year, genders, industry, citizenship, age_range):
 
 
 # Main
-st.header("Let's analyze some Billionaires Data💰💰")
-st.text("Researchers have compiled a multi-decade database of the super-rich.\n👉Building off the Forbes World’s Billionaires lists from 1996-2014, scholars at Peterson\nInstitute for International Economics have added a couple dozen more variables about\neach billionaire - including whether they were self-made or inherited their wealth.") 
-st.markdown("1. Who are the TOP 10 billionaires and what's their wealth in 1996, 2001, and 2014?\n2. How has billionaire's wealth contributed to different economies and how has the wealth distribution changed throughout years?")
+st.title("Let's analyze some Billionaires Data💰💰")
+st.markdown("Researchers have compiled a multi-decade database of the super-rich.")
+st.markdown("👉Building off the Forbes World’s Billionaires lists from 1996-2014, scholars at Peterson Institute for International Economics have added a couple dozen more variables about each billionaire - including whether they were self-made or inherited their wealth.") 
+
+st.markdown("How has billionaire's wealth contributed to different economies and how has the wealth distribution changed throughout years?")
 st.markdown("3. What's the distribution of billionaires in 2014 by the following criteria:\n- Type of the billionaire's wealth\n- Type of the billionaire's business\n- Region of the world the billioanire resides\n- Industry the billionaire profitted from")
 st.markdown("4. How is billaionaires' age associated with their wealth in 2014?")
 st.markdown("5. Given data of year 2014, were the wealth of billionaires inherited or earned? How does that look like by age and wealth?")
@@ -117,7 +119,8 @@ st.write(' ')
 
 
 ## Plot 1: TOP Billionaires by Year
-st.subheader("1. Show TOP 10 billionaires by Year Selected")
+st.header("1. Show TOP 10 billionaires by Year Selected")
+st.subheader("Who are the TOP 10 billionaires and what's their wealth in 1996, 2001, and 2014?")
 st.markdown('Select year from the dropdown menu to see corresponding TOP 10 billionaires in dataframe and barchart!') 
 
 
