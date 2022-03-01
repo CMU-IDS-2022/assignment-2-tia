@@ -98,3 +98,6 @@ TODO:  **A success story of your project.** Describe an insight or discovery you
     -Most billionaires' wealth are not inherited, especially for those who wealth worth is at the lower level on the scale. Wealth inherited from father or third generation becomes more prevelant in upper level of wealth worth. This may imply that by one's own effort, the person is able to accumulate certain amount of wealth, but in order to become one of the TOP richest people, family heritage sometimes may play an important role (although for some of the richest people, their wealth was not inherited—this may have something to do with other factors such as company industry, etc).
     - Distribution of inheritance type, in general, is consistent across all age groups: not inherited > father > 3rd generation > 4th generation > 5th generation > spouse/widow.
 
+**Which aspect took the most time?**
+- Silvia: think and implement interactions between graphs
+- Tina: explore how to use map with Altair and deploy it to Streamlit
