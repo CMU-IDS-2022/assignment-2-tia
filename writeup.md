@@ -36,7 +36,7 @@ TODO: **A rationale for your design decisions.** How did you choose your particu
   - Filter by year: selection box (dropdown menu)
   - Visualize geographical location: world map
   - Show cumulative wealth from billionaires by country: different color shades to represent change in wealth worth 
-  - *The rationale of using the world map is straightforward as we'd like to present geological information. Here I matched the country information from my dataset with country-code to color the entire country regions. we chose not to use longitute and latitude because by doing so, we could only use circles to represent the country with varying size indicating the difference in wealth worth. This is not aesthetically pleasant——using different color shades is more efficient. By selecting different years using the dropdown menu, users are able to detect a direct change in wealth distribution (If our year variable is more "continuous", we'd have used slider rather than dropdown menu and added some color transition effects if possible)*  
+  - *The rationale of using the world map is straightforward as we'd like to present geological information. Here I matched the country information from my dataset with country-code to color the entire country regions. we chose not to use longitute and latitude because by doing so, we could only use circles to represent the country with varying size indicating the difference in wealth worth. This is not aesthetically pleasant—using different color shades is more efficient. By selecting different years using the dropdown menu, users are able to detect a direct change in wealth distribution (If our year variable is more "continuous", we'd have used slider rather than dropdown menu and added some color transition effects if possible)*  
 
 
 **3.What's the distribution of billionaires in 2014 by different criteria?**
@@ -53,7 +53,7 @@ TODO: **A rationale for your design decisions.** How did you choose your particu
 **5. Given data of year 2014, were the wealth of billionaires inherited or earned? How does that look like by age and wealth?**
   - Show different wealth accural means: color the points in scatter plot
   - Show distribution of wealth accural means by age and wealth worth: selection interval linked to stacked bar chart
-  - * 
+  - *We would like to build some interactions between two different plots. Here we choose selection interval as the customized size of selected region allows users to explore inheritance types by age(with the selected region as a vertical rectangle with height covering the wealth worth range), by wealth level (with the selected region as a horizontal rectangle with length covering the age range), or by any combinations of age and wealth level customized by users. The stackbaris a direct way to show the count and proportion of different inheritance types. Pie chart can also achieve that goal, but it seems not fit here as we want to keep the wealth worth axis consistent with the linked scatter plot.
 
 
 
