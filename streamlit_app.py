@@ -198,7 +198,7 @@ st.write(' ')
 ## Plot 3: Gender Distribution by Different Categories
 st.subheader("3. Visualize Gender Distribution by Selected Category")
 st.markdown("👉What's the distribution of billionaires in 2014 by different criteria?")
-st.markdown("**Number of billionares by different categories, click certain category to see gender percentage**")
+st.markdown("**Number of billionares by different categories, click certain category to see gender distribution**")
 
 df_14 = load_data14()
 bar_list = ['wealth_type','company_type','location_region','wealth_how_industry']
