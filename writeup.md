@@ -1,6 +1,10 @@
 # What's behind Forbes Billionaires' 💰💰💰
 
-![A screenshot of your application. Could be a GIF.](screenshot.png)
+![A screenshot of your application](1.png)
+![A screenshot of your application](2.png)
+![A screenshot of your application](3.png)
+![A screenshot of your application](4.png)
+
 
 TODO: Update screenshot
 
