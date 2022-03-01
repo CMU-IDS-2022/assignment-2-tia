@@ -1,4 +1,4 @@
-# Secrets behind Billionaire💰💰💰
+# What's behind Billionaire's 💰💰💰
 
 ![A screenshot of your application. Could be a GIF.](screenshot.png)
 
