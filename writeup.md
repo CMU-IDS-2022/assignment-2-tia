@@ -30,11 +30,13 @@ TODO: **A rationale for your design decisions.** How did you choose your particu
   - Filter by year: selection box  
   - Present TOP 10 billionaire's information by rank: sorted dataframe (table)
   - Visualize TOP 10 billiaonires' wealth: sorted bar chart with color scales
+
  
 **2. How has billionaire's wealth contributed to different economies and how has the wealth distribution changed throughout years?**
   - Filter by year: selection box
   - Visualize geographical location: world map
-  - Show cumulative wealth from billionaires by country: color scale to represent change in wealth worth 
+  - Show cumulative wealth from billionaires by country: different color shades to represent change in wealth worth 
+  - *The rationale of using the world map is straightforward as I'd like to present geological information. Here I matched the country information from my dataset with country-code to color the entire country regions. I chose not to use longitute and latitude because by doing so, I could only use circles to represent the country with varying size indicating the difference in wealth worth. This is not aesthetically pleasant——using different color shades is more efficient.  
 
 
 **3.What's the distribution of billionaires in 2014 by different criteria?**
