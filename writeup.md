@@ -36,9 +36,9 @@ We achieved these goals through different types of visualization including inter
  
 **2. How has billionaire's wealth contributed to different economies and how has the wealth distribution changed throughout years?**
   - Filter by year: selection box (dropdown menu)
-  - Visualize geographical location: world map
+  - Visualize geographical location: choropleth map
   - Show cumulative wealth from billionaires by country: different color shades to represent change in wealth worth 
-  - *The rationale of using the world map is straightforward as we'd like to present geological information. Here I matched the country information from my dataset with country-code to color the entire country regions. we chose not to use longitute and latitude because by doing so, we could only use circles to represent the country with varying size indicating the difference in wealth worth. This is not aesthetically pleasant—using different color shades is more efficient. By selecting different years using the dropdown menu, users are able to detect a direct change in wealth distribution (If our year variable is more "continuous", we'd have used slider rather than dropdown menu and added some color transition effects if possible). The tooltip also allows users to check country names and the original wealth worth.*  
+  - *The rationale of using the world map is straightforward as we'd like to present geological information. Here I matched the country information from my dataset with country-code to color the entire country regions. We chose not to use longitute and latitude because by doing so, we could only use circles to represent the country with varying size indicating the difference in wealth worth (aka a bubble map). This is not aesthetically pleasant—using different color shades is more efficient. By selecting different years using the dropdown menu, users are able to detect a direct change in wealth distribution (If our year variable is more "continuous", we'd have used slider rather than dropdown menu and added some color transition effects if possible). The tooltip also allows users to check country names and the original wealth worth.*  
 
 
 **3.What's the distribution of billionaires in 2014 by different criteria?**
