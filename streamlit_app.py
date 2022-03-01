@@ -141,7 +141,7 @@ rank_bar = alt.Chart(
     color=alt.Color('wealth_worth_in_billions')
 
 ).transform_window(
-    rank='rank(wealth_worth_in_billions
+    rank='rank(wealth_worth_in_billions)',
     sort=[alt.SortField('rank', order='descending')]
 ).transform_filter(
     (alt.datum.rank < 11)
