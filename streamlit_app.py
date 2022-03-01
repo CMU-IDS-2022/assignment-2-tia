@@ -202,10 +202,10 @@ st.markdown("**Number of billionares by different categories, click certain cate
 
 df_14 = load_data14()
 bar_list = ['wealth_type','company_type','location_region','wealth_how_industry']
-st.markdown("'wealth_type' represents how they obtain their wealth, through inheritage, marriage or earning by themselves.")
-st.markdown("'company_type' represents the type of business for their companies, like private or state owned.")
-st.markdown("'location_region' represents the region of the world where this billionaire lives.")
-st.markdown("'wealth_how_industry' represents the specific industry this billionaire profitted from.")
+st.markdown("   - 'wealth_type' represents how they obtain their wealth, through inheritage, marriage or earning by themselves.")
+st.markdown("   - 'company_type' represents the type of business for their companies, like private or state owned.")
+st.markdown("   - 'location_region' represents the region of the world where this billionaire lives.")
+st.markdown("   - 'wealth_how_industry' represents the specific industry this billionaire profitted from.")
 
 feature = st.selectbox('Category', bar_list)
 
