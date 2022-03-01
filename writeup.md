@@ -6,7 +6,6 @@
 ![A screenshot of your application](4.png)
 
 
-TODO: Update screenshot
 
 **Overview**: Researchers have compiled a multi-decade database of the super-rich. Building off the Forbes World’s Billionaires lists from 1996-2014, scholars at Peterson Institute for International Economics have added a couple dozen more variables about each billionaire - including whether they were self-made or inherited their wealth. 
 [(Data Source)](https://corgis-edu.github.io/corgis/csv/billionaires/)
@@ -79,10 +78,6 @@ TODO: **A rationale for your design decisions.** How did you choose your particu
 
 
 ## Success Story
-
-TODO:  **A success story of your project.** Describe an insight or discovery you gain with your application that relates to the goals of your project.
-
-
 
 
 **1. Who are the TOP 10 billionaires and what's their wealth in 1996, 2001, and 2014?**
