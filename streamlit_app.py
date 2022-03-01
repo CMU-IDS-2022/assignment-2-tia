@@ -120,7 +120,7 @@ st.write(' ')
 
 ## Plot 1: TOP Billionaires by Year
 st.header("1. Show TOP 10 billionaires by Year Selected")
-st.subheader("👉Who are the TOP 10 billionaires and what's their wealth in 1996, 2001, and 2014?")
+st.text("👉Who are the TOP 10 billionaires and what's their wealth in 1996, 2001, and 2014?")
 st.caption("Who are the TOP 10 billionaires and what's their wealth in 1996, 2001, and 2014?")
 st.markdown('Select year from the dropdown menu to see corresponding TOP 10 billionaires in dataframe and barchart!') 
 
