@@ -1,4 +1,4 @@
-# What's behind Billionaire's 💰💰💰
+# What's behind Forbes Billionaires' 💰💰💰
 
 ![A screenshot of your application. Could be a GIF.](screenshot.png)
 
