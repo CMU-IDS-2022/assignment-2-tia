@@ -1,6 +1,6 @@
 # What's behind Forbes Billionaires' 💰💰💰
 
-![A screenshot of your application](1.png)
+![A screenshot of your application](1.png |width=100)
 ![A screenshot of your application](2.png)
 ![A screenshot of your application](3.png)
 ![A screenshot of your application](4.png)
