@@ -5,7 +5,7 @@
 TODO: Update screenshot
 
 **Overview**: Researchers have compiled a multi-decade database of the super-rich. Building off the Forbes World’s Billionaires lists from 1996-2014, scholars at Peterson Institute for International Economics have added a couple dozen more variables about each billionaire - including whether they were self-made or inherited their wealth. 
-[data source](https://corgis-edu.github.io/corgis/csv/billionaires/)
+[(Data Source)](https://corgis-edu.github.io/corgis/csv/billionaires/)
 
 We are interested in the rank of billionaires in different years, the distribution of cumulative wealth across country, distribution of billionaires across gender, location, industry, company type, and wealth accural means. 
 
