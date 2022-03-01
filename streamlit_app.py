@@ -121,7 +121,6 @@ st.write(' ')
 ## Plot 1: TOP Billionaires by Year
 st.header("1. Show TOP 10 billionaires by Year Selected")
 st.markdown("👉Who are the TOP 10 billionaires and what's their wealth in 1996, 2001, and 2014?")
-st.caption("Who are the TOP 10 billionaires and what's their wealth in 1996, 2001, and 2014?")
 st.markdown('Select year from the dropdown menu to see corresponding TOP 10 billionaires in dataframe and barchart!') 
 
 
@@ -156,6 +155,7 @@ st.write(' ')
 
 ## Plot 2: Cumulative Wealth from Billionaires by Country and Year
 st.subheader("2. Cumulative Wealth from Billionaires across Country by Year")
+st.markdown("👉How has billionaire's wealth contributed to different economies and how has the wealth distribution changed throughout years?")
 st.markdown('Change year to see overall wealth distribution from Forbes bliionaires over the world!') 
 
 
@@ -202,9 +202,10 @@ st.write(' ')
 
 ## Plot 3: Gender Distribution by Different Categories
 st.subheader("3. Visualize Gender Distribution by Selected Category")
-df_14 = load_data14()
-
+st.markdown("👉What's the distribution of billionaires in 2014 by different criteria?")
 st.markdown("**Number of billionares by different categories, click certain category to see gender percentage**")
+
+df_14 = load_data14()
 bar_list = ['wealth_type','company_type','location_region','wealth_how_industry']
 st.markdown("'wealth_type' represents how they obtain their wealth, through inheritage, marriage or earning by themselves.")
 st.markdown("'company_type' represents the type of business for their companies, like private or state owned.")
@@ -244,6 +245,7 @@ st.write(' ')
 
 ## Plot 4: Linked Brushing: Age, Wealth, and Inheritance 
 st.subheader("4. Age, Wealth, and Inheritance")
+st.markdown("👉How is billaionaires' age associated with their wealth in 2014? Were their wealth inherited or earned? How does that look like by age and wealth?")
 st.markdown('Check out the inheritance types by age or by wealth level!')
 df14 = load_data14()
 scatter = alt.Chart(df14).mark_point(
