@@ -103,7 +103,7 @@ def get_slice_membership(df, year, genders, industry, citizenship, age_range):
 st.header("Let's analyze some Billionaires Data💰💰")
 st.text("Researchers have compiled a multi-decade database of the super-rich.\n👉Building off the Forbes World’s Billionaires lists from 1996-2014, scholars at Peterson\nInstitute for International Economics have added a couple dozen more variables about\neach billionaire - including whether they were self-made or inherited their wealth.") 
 st.markdown("1. Who are the TOP 10 billionaires and what's their wealth in 1996, 2001, and 2014?\n2. How has billionaire's wealth contributed to different economies and how has the wealth distribution changed throughout years?")
-st.markdown("3. What's the distribution of billionaires in 2014 by the following criteria:\n- Type of the billionaire's wealth- Type of the billionaire's business\n- Region of the world the billioanire resides"）
+st.markdown("3. What's the distribution of billionaires in 2014 by the following criteria:\n- Type of the billionaire's wealth\n- Type of the billionaire's business\n- Region of the world the billioanire resides")
 
 df = load_data()
 if st.checkbox("Show Raw Data"):
