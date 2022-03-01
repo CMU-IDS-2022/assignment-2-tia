@@ -100,8 +100,9 @@ def get_slice_membership(df, year, genders, industry, citizenship, age_range):
 
 
 # Main
-st.title("What's behind Forbes Billionaires' 💰💰💰")
-st.markdown("Researchers have compiled a multi-decade database of the super-rich.\n👉Building off the Forbes World’s Billionaires lists from 1996-2014, scholars at Peterson Institute for International Economics have added a couple dozen more variables about each billionaire - including whether they were self-made or inherited their wealth.") 
+st.header("What's behind Forbes Billionaires' 💰💰💰")
+st.markdown("Researchers have compiled a multi-decade database of the super-rich.")
+st.markdown("👉Building off the Forbes World’s Billionaires lists from 1996-2014, scholars at Peterson Institute for International Economics have added a couple dozen more variables about each billionaire - including whether they were self-made or inherited their wealth.") 
 
 df = load_data()
 if st.checkbox("Show Raw Data"):
@@ -113,7 +114,7 @@ st.write(' ')
 
 
 ## Plot 1: TOP Billionaires by Year
-st.header("1. Show TOP 10 billionaires by Year Selected")
+st.subheader("1. Show TOP 10 billionaires by Year Selected")
 st.markdown("👉Who are the TOP 10 billionaires and what's their wealth in 1996, 2001, and 2014?")
 st.markdown('**Select year from the dropdown menu to see corresponding TOP 10 billionaires in dataframe and barchart!**') 
 
